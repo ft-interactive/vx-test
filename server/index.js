@@ -18,7 +18,10 @@ import App from '../client/app';
 
 export default (context) => {
   const {
-    buildTime, id, testCommentsUuid, flags: { dark },
+    buildTime,
+    id,
+    testCommentsUuid,
+    flags: { dark },
   } = context;
 
   const pageClasses = ['core', dark && 'dark'];
@@ -44,6 +47,8 @@ export default (context) => {
   return `
     <!doctype html>
     <html ${htmlAttributes.join(' ')}>
+      <!-- Fonts -->
+      <link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-fonts@^3.0.4" />
       <!-- Critical path CSS -->
       <link rel="stylesheet" href="${criticalPath}" />
       ${renderToString(<HtmlHead {...context} />)}
