@@ -13,28 +13,28 @@ import defaultProps from '../vv-default-props';
 
 const Columns = (props) => {
   const {
-    data, xVariable, yVariable, width, height, margin,
+    data, x, y, width, height, margin,
   } = props;
   const xBound = width - margin.left - margin.right;
   const yBound = height - margin.top - margin.bottom;
   const xScale = scaleBand({
     rangeRound: [0, xBound],
-    domain: data.map(d => d[xVariable]),
+    domain: data.map(d => d[x]),
     padding: 0.4,
   });
   const yScale = scaleLinear({
     rangeRound: [yBound, 0],
-    domain: [0, Math.max(...data.map(d => d[yVariable]))],
+    domain: [0, Math.max(...data.map(d => d[y]))],
   });
 
   return (
     <svg width={width} height={height}>
       {data.map((d) => {
-        const xPosition = xScale(d[xVariable]);
-        const yPosition = yBound - yScale(d[yVariable]);
+        const xPosition = xScale(d[x]);
+        const yPosition = yBound - yScale(d[y]);
 
         return (
-          <Group key={`bar-${d[xVariable]}`}>
+          <Group key={`bar-${d[x]}`}>
             <Bar
               x={xPosition}
               y={yBound - yPosition}
@@ -53,8 +53,8 @@ const Columns = (props) => {
 Columns.propTypes = propTypes;
 Columns.defaultProps = {
   data: letterFrequency,
-  xVariable: 'letter',
-  yVariable: 'frequency',
+  x: 'letter',
+  y: 'frequency',
   ...defaultProps,
 };
 
