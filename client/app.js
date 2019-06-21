@@ -52,7 +52,9 @@
 
 import Layout from '@financial-times/g-components';
 import React, { PureComponent } from 'react';
+import { letterFrequency } from '@vx/mock-data';
 import { ContextPropType, ContextDefaultProps } from './util/prop-types';
+import Columns from './components/columns';
 
 class App extends PureComponent {
   state = {
@@ -71,6 +73,25 @@ class App extends PureComponent {
 
     return (
       <Layout {...context}>
+        <Columns
+          // data={}
+          // x=""
+          // y=""
+          // category="letter"
+          // value="frequency"
+          // groupBy=""
+          // sortBy="" // "x", "y", "group"
+          // sortOrder="" // "ascending", "descending", "none"
+          width={700}
+          height={500}
+          margin={{
+            top: 20,
+            bottom: 20,
+            left: 20,
+            right: 20,
+          }}
+        />
+
         <p>
           Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte
           hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s&apos;joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur
