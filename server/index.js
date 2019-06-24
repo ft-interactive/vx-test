@@ -8,53 +8,62 @@
  * You shouldn't need to mess with it, generally.
  */
 
-import 'undom/register';
+// import 'undom/register';
 import './register'; // Remove when o- deps are fixed.
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import { StyleSheetServer } from 'aphrodite';
 import { HtmlHead } from '@financial-times/g-components';
 import criticalPath from '@financial-times/g-components/shared/critical-path.scss';
 import App from '../client/app';
 
-export default (context) => {
-  const {
-    buildTime,
-    id,
-    testCommentsUuid,
-    flags: { dark },
-  } = context;
+export default () => typeof window;
 
-  const pageClasses = ['core', dark && 'dark'];
+// export default (context) => {
+//   const {
+//     buildTime,
+//     id,
+//     testCommentsUuid,
+//     flags: { dark },
+//   } = context;
 
-  // These get added to the opening <html> element below.
-  const htmlAttributes = Object.entries({
-    lang: 'en-GB',
-    class: pageClasses.filter(i => i).join(' '),
-    'data-buildtime': buildTime,
-    'data-content-id': process.env.NODE_ENV === 'production' ? id || testCommentsUuid : id || '',
-  }).map(([k, v]) => `${k}="${v}"`);
+//   const { html, css } = StyleSheetServer.renderStatic(() => renderToString(<App {...context} />));
 
-  /*
-    Here's where we generate the server-side template. We render the g-components
-    <HtmlHead> element as a string (it contains wrapping <head> elements), then
-    stringify the entire React app inside of body > #app.
+//   const pageClasses = ['core', dark && 'dark'];
 
-    Later, in the client-side code, the stringified React app gets updated ("hydrated")
-    with current state. This is probably overkill for most IG projects but will be
-    useful in anything even slightly more advanced.
-   */
+//   // These get added to the opening <html> element below.
+//   const htmlAttributes = Object.entries({
+//     lang: 'en-GB',
+//     class: pageClasses.filter(i => i).join(' '),
+//     'data-buildtime': buildTime,
+//     'data-content-id': process.env.NODE_ENV === 'production' ? id || testCommentsUuid : id || '',
+//   }).map(([k, v]) => `${k}="${v}"`);
 
-  return `
-    <!doctype html>
-    <html ${htmlAttributes.join(' ')}>
-      <!-- Fonts -->
-      <link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-fonts@^3.0.4" />
-      <!-- Critical path CSS -->
-      <link rel="stylesheet" href="${criticalPath}" />
-      ${renderToString(<HtmlHead {...context} />)}
-      <body>
-        <div id="app">${renderToString(<App {...context} />)}</div>
-      </body>
-    </html>
-  `.trim();
-};
+//   /*
+//     Here's where we generate the server-side template. We render the g-components
+//     <HtmlHead> element as a string (it contains wrapping <head> elements), then
+//     stringify the entire React app inside of body > #app.
+
+//     Later, in the client-side code, the stringified React app gets updated ("hydrated")
+//     with current state. This is probably overkill for most IG projects but will be
+//     useful in anything even slightly more advanced.
+//    */
+
+//   return `
+//     <!doctype html>
+//     <html ${htmlAttributes.join(' ')}>
+//       <!-- Fonts -->
+//       <link rel="stylesheet" href="https://www.ft.com/__origami/service/build/v2/bundles/css?modules=o-fonts@^3.0.4" />
+//       <!-- Critical path CSS -->
+//       <link rel="stylesheet" href="${criticalPath}" />
+//       ${renderToString(<HtmlHead {...context} />)}
+//       <style data-aphrodite>${css.content}</style>
+//       <body>
+//         <div id="app">${html}</div>
+//         <script>
+//           StyleSheet.rehydrate(${JSON.stringify(css.renderedClassNames)});
+//         </script>
+//       </body>
+//     </html>
+//   `.trim();
+// };
