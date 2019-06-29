@@ -10,6 +10,7 @@ import { Bar } from '@vx/shape';
 import { letterFrequency } from '@vx/mock-data';
 import propTypes from '../vv-prop-types';
 import defaultProps from '../vv-default-props';
+import Chart from '../vv-chartframe';
 
 const Columns = (props) => {
   const {
@@ -28,7 +29,7 @@ const Columns = (props) => {
   });
 
   return (
-    <svg width={width} height={height}>
+    <Chart type="l">
       {data.map((d) => {
         const xPosition = xScale(d[x]);
         const yPosition = yBound - yScale(d[y]);
@@ -46,7 +47,7 @@ const Columns = (props) => {
           </Group>
         );
       })}
-    </svg>
+    </Chart>
   );
 };
 
