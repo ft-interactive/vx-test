@@ -5,9 +5,8 @@
 
 import Layout from '@financial-times/g-components';
 import React, { PureComponent } from 'react';
-import { letterFrequency } from '@vx/mock-data';
 import { ContextPropType, ContextDefaultProps } from './util/prop-types';
-import Columns from './components/columns';
+import BarChart from './components/bar-chart';
 
 class App extends PureComponent {
   state = {
@@ -22,34 +21,17 @@ class App extends PureComponent {
   render() {
     const context = this.props;
     const { data } = this.state;
-    console.dir(data); // eslint-disable-line no-console
+    // console.dir(data); // eslint-disable-line no-console
 
     return (
       <Layout {...context}>
-        <Columns
-          // data={}
-          // x=""
-          // y=""
-          // category="letter"
-          // value="frequency"
-          // groupBy=""
-          // sortBy="" // "x", "y", "group"
-          // sortOrder="" // "ascending", "descending", "none"
-          width={700}
-          height={500}
-          margin={{
-            top: 20,
-            bottom: 20,
-            left: 20,
-            right: 20,
-          }}
-        />
-
         <p>
           Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte
           hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s&apos;joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur
           ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
         </p>
+
+        <BarChart />
 
         <p>
           Nk sola ēsperanÞiġo obl, mulÞō ipsilono nēdifīnita ien ed. Trīliono kōmpleksa co mil, kī āġā farī onin
