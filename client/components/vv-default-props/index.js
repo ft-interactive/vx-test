@@ -1,19 +1,22 @@
 import { letterFrequency } from '@vx/mock-data';
 
-export const coreDefaults = {
+export const vvCoreDefaults = {
   width: 700,
   height: 500,
   margin: {
     top: 20,
-    right: 10,
-    bottom: 20,
-    left: 10,
+    right: 20,
+    bottom: 23,
+    left: 20,
   },
 };
 
-export const axisDefaults = {};
+export const vvAxisDefaults = {
+  top: 0,
+  left: 0,
+};
 
-export const barsDefaults = {
+export const vvBarsDefaults = {
   data: letterFrequency,
   xVariable: 'frequency',
   yVariable: 'letter',

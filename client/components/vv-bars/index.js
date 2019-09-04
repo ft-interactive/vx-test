@@ -6,10 +6,10 @@
 import React from 'react';
 import { Group } from '@vx/group';
 import { Bar } from '@vx/shape';
-import { barsTypes } from '../vv-prop-types';
-import { barsDefaults } from '../vv-default-props';
+import { vvBarsPropTypes } from '../vv-prop-types';
+import { vvBarsDefaults } from '../vv-default-props';
 
-const Bars = (props) => {
+const VvBars = (props) => {
   const {
     data, xVariable, yVariable, xScale, yScale,
   } = props;
@@ -28,7 +28,7 @@ const Bars = (props) => {
   );
 };
 
-Bars.propTypes = { ...barsTypes };
-Bars.defaultProps = { ...barsDefaults };
+VvBars.propTypes = { ...vvBarsPropTypes };
+VvBars.defaultProps = { ...vvBarsDefaults };
 
-export default Bars;
+export default VvBars;

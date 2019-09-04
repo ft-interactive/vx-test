@@ -6,10 +6,10 @@
 import React from 'react';
 import { scaleBand, scaleLinear } from '@vx/scale';
 import { Group } from '@vx/group';
-import Bars from '../bars';
+import VvBars from '../vv-bars';
 import VvAxis from '../vv-axis';
-import { coreTypes, barsTypes } from '../vv-prop-types';
-import { coreDefaults, barsDefaults } from '../vv-default-props';
+import { vvCorePropTypes, vvBarsPropTypes } from '../vv-prop-types';
+import { vvCoreDefaults, vvBarsDefaults } from '../vv-default-props';
 
 const BarChart = (props) => {
   const {
@@ -30,15 +30,19 @@ const BarChart = (props) => {
   return (
     <svg width={width} height={height}>
       <Group transform={`translate(${margin.left}, ${margin.top})`}>
-        <Bars data={data} xVariable={xVariable} yVariable={yVariable} xScale={xScale} yScale={yScale} />
+        <VvBars data={data} xVariable={xVariable} yVariable={yVariable} xScale={xScale} yScale={yScale} />
 
-        <VvAxis scale={xScale} top={innerHeight} />
+        {/* y-axis */}
+        <VvAxis orientation="left" scale={yScale} />
+
+        {/* x-axis */}
+        <VvAxis orientation="bottom" top={innerHeight} scale={xScale} />
       </Group>
     </svg>
   );
 };
 
-BarChart.propTypes = { ...coreTypes, ...barsTypes };
-BarChart.defaultProps = { ...coreDefaults, ...barsDefaults };
+BarChart.propTypes = { ...vvCorePropTypes, ...vvBarsPropTypes };
+BarChart.defaultProps = { ...vvCoreDefaults, ...vvBarsDefaults };
 
 export default BarChart;

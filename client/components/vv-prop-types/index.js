@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-export const coreTypes = {
+export const vvCorePropTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   margin: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 // @vx/axis (https://vx-demo.now.sh/static/docs/vx-axis.html)
-export const axisTypes = {
+export const vvAxisPropTypes = {
   axisClassName: PropTypes.string,
   axisLineClassName: PropTypes.string,
   children: PropTypes.func,
@@ -18,9 +18,9 @@ export const axisTypes = {
   labelClassName: PropTypes.string,
   labelOffset: PropTypes.number,
   labelProps: PropTypes.func,
-  left: PropTypes.number,
+  left: PropTypes.number.isRequired,
   numTicks: PropTypes.number,
-  orientation: PropTypes.string, // Only applies to <Axis />
+  orientation: PropTypes.string, // Tick orientation. Only applies to <Axis />
   rangePadding: PropTypes.number,
   scale: PropTypes.func.isRequired,
   stroke: PropTypes.string,
@@ -34,10 +34,10 @@ export const axisTypes = {
   tickStroke: PropTypes.string,
   tickTransform: PropTypes.string,
   tickValues: PropTypes.array,
-  top: PropTypes.number,
+  top: PropTypes.number.isRequired,
 };
 
-export const barsTypes = {
+export const vvBarsPropTypes = {
   data: PropTypes.arrayOf(PropTypes.any).isRequired,
   xVariable: PropTypes.string.isRequired,
   yVariable: PropTypes.string.isRequired,
