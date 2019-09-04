@@ -90,7 +90,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "@financial-times/g-components": "^2.2.2",
+    "@financial-times/g-components": "^2.3.7",
     "@vx/axis": "0.0.189",
     "@vx/group": "0.0.189",
     "@vx/mock-data": "0.0.189",
