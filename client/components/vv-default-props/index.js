@@ -11,10 +11,7 @@ export const vvCoreDefaults = {
   },
 };
 
-export const vvAxisDefaults = {
-  top: 0,
-  left: 0,
-};
+export const vvAxisDefaults = {};
 
 export const vvBarsDefaults = {
   data: letterFrequency,

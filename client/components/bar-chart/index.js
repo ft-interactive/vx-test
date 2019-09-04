@@ -13,7 +13,7 @@ import { vvCoreDefaults, vvBarsDefaults } from '../vv-default-props';
 
 const BarChart = (props) => {
   const {
-    data, xVariable, yVariable, width, height, margin,
+    data, xAxisOrientation, yAxisOrientation, xVariable, yVariable, width, height, margin,
   } = props;
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
@@ -33,10 +33,10 @@ const BarChart = (props) => {
         <VvBars data={data} xVariable={xVariable} yVariable={yVariable} xScale={xScale} yScale={yScale} />
 
         {/* y-axis */}
-        <VvAxis orientation="left" scale={yScale} />
+        <VvAxis orientation={yAxisOrientation} left={yAxisOrientation === 'left' ? 0 : innerWidth} scale={yScale} />
 
         {/* x-axis */}
-        <VvAxis orientation="bottom" top={innerHeight} scale={xScale} />
+        <VvAxis orientation={xAxisOrientation} top={xAxisOrientation === 'top' ? 0 : innerHeight} scale={xScale} />
       </Group>
     </svg>
   );
