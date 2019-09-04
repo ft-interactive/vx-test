@@ -18,18 +18,18 @@ const BarChart = (props) => {
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
   const xScale = scaleLinear({
+    rangeRound: [0, innerWidth],
     domain: [0, Math.max(...data.map(d => d[xVariable]))],
-    rangeRound: [margin.left, innerWidth],
   });
   const yScale = scaleBand({
-    domain: data.map(d => d[yVariable]),
     rangeRound: [0, innerHeight],
+    domain: data.map(d => d[yVariable]),
     padding: 0.1,
   });
 
   return (
     <svg width={width} height={height}>
-      <Group>
+      <Group transform={`translate(${margin.left}, ${margin.top})`}>
         <Bars data={data} xVariable={xVariable} yVariable={yVariable} xScale={xScale} yScale={yScale} />
 
         <VvAxis scale={xScale} top={innerHeight} />
