@@ -8,8 +8,8 @@ export default (environment = 'development') => ({
   errorReporting: environment === 'production',
   analytics: environment === 'production',
   googleAnalytics: environment === 'production',
-  ads: true,
-  onwardjourney: true,
+  ads: false,
+  onwardjourney: false,
   shareButtons: true,
   header: true,
   footer: true,
@@ -32,5 +32,5 @@ export default (environment = 'development') => ({
     3a499586-b2e0-11e4-a058-00144feab7de
 
   */
-  comments: true,
+  comments: false,
 });
