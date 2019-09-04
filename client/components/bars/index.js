@@ -6,8 +6,8 @@
 import React, { Fragment } from 'react';
 import { Group } from '@vx/group';
 import { Bar } from '@vx/shape';
-import { coreTypes, barsTypes } from '../vv-prop-types';
-import { coreDefaults, barsDefaults } from '../vv-default-props';
+import { barsTypes } from '../vv-prop-types';
+import { barsDefaults } from '../vv-default-props';
 
 const Bars = (props) => {
   const {
