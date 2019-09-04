@@ -3,7 +3,7 @@
  * Bars geometry
  */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Group } from '@vx/group';
 import { Bar } from '@vx/shape';
 import { barsTypes } from '../vv-prop-types';
@@ -15,20 +15,16 @@ const Bars = (props) => {
   } = props;
 
   return (
-    <Fragment>
+    <Group className="vv-bars">
       {data.map((d) => {
         const xPosition = xScale.range()[0];
         const yPosition = yScale(d[yVariable]);
         const width = xScale(d[xVariable]);
         const height = yScale.bandwidth();
 
-        return (
-          <Group key={`bar-${d[yVariable]}`}>
-            <Bar x={xPosition} y={yPosition} width={width} height={height} className="vv-bar" fill="#ff1a66" />
-          </Group>
-        );
+        return <Bar key={`bar-${d[yVariable]}`} x={xPosition} y={yPosition} width={width} height={height} />;
       })}
-    </Fragment>
+    </Group>
   );
 };
 
