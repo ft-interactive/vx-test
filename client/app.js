@@ -8,6 +8,14 @@ import React, { PureComponent } from 'react';
 import { ContextPropType, ContextDefaultProps } from './util/prop-types';
 import BarChart from './components/bar-chart';
 
+// Select required chart sizes
+const chartSizes = [
+  // { name: 'Méthode image set — small', width: 300, height: 400 },
+  { name: 'Méthode image set — medium', width: 700, height: 500 },
+  // { name: 'Méthode image set — large', width: 1180, height: 700 },
+  // { name: 'Custom', width: 700, height: 500 },
+];
+
 // Configure your chart
 const chartProps = {
   // dataFile: '../data/example.csv',
@@ -47,37 +55,22 @@ class App extends PureComponent {
           </GridRow>
         </GridContainer>
 
-        {/* Image set */}
         <GridContainer>
-          <GridRow>
-            <div data-o-grid-colspan="12">
-              <h2>
-Image set — small
-              </h2>
+          {chartSizes.map((size) => {
+            const { name, ...dimensions } = size;
 
-              <BarChart width={300} height={400} {...chartProps} />
-            </div>
-          </GridRow>
+            return (
+              <GridRow>
+                <div data-o-grid-colspan="12">
+                  <h2>
+                    {name}
+                  </h2>
 
-          <GridRow>
-            <div data-o-grid-colspan="12">
-              <h2>
-Image set — medium
-              </h2>
-
-              <BarChart width={700} height={500} {...chartProps} />
-            </div>
-          </GridRow>
-
-          <GridRow>
-            <div data-o-grid-colspan="12">
-              <h2>
-Image set — large
-              </h2>
-
-              <BarChart width={1180} height={700} {...chartProps} />
-            </div>
-          </GridRow>
+                  <BarChart {...dimensions} {...chartProps} />
+                </div>
+              </GridRow>
+            );
+          })}
         </GridContainer>
 
         <GridContainer>
