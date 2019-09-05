@@ -18,7 +18,7 @@ export const vvAxisPropTypes = {
   labelClassName: PropTypes.string,
   labelOffset: PropTypes.number,
   labelProps: PropTypes.func,
-  left: PropTypes.number.isRequired,
+  left: PropTypes.number,
   numTicks: PropTypes.number,
   orientation: PropTypes.string, // Tick orientation. Only applies to <Axis />
   rangePadding: PropTypes.number,
@@ -34,7 +34,7 @@ export const vvAxisPropTypes = {
   tickStroke: PropTypes.string,
   tickTransform: PropTypes.string,
   tickValues: PropTypes.array,
-  top: PropTypes.number.isRequired,
+  top: PropTypes.number,
 };
 
 export const vvBarsPropTypes = {
