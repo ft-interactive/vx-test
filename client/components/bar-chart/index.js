@@ -5,11 +5,12 @@
 
 import React from 'react';
 import { scaleBand, scaleLinear } from '@vx/scale';
+import { max } from 'd3-array';
 import { Group } from '@vx/group';
 import VvBars from '../vv-bars';
 import VvAxis from '../vv-axis';
-import { vvCorePropTypes, vvBarsPropTypes } from '../vv-prop-types';
-import { vvCoreDefaultProps, vvBarsDefaultProps } from '../vv-default-props';
+import { vvCorePropTypes, barChartPropTypes, vvBarsPropTypes } from '../vv-prop-types';
+import { vvCoreDefaultProps, barChartDefaultProps, vvBarsDefaultProps } from '../vv-default-props';
 
 const BarChart = (props) => {
   const {
@@ -19,7 +20,7 @@ const BarChart = (props) => {
   const innerHeight = height - margin.top - margin.bottom;
   const xScale = scaleLinear({
     rangeRound: [0, innerWidth],
-    domain: [0, Math.max(...data.map(d => d[xVariable]))],
+    domain: [0, max(data, d => d[xVariable])],
   });
   const yScale = scaleBand({
     rangeRound: [0, innerHeight],
@@ -42,7 +43,7 @@ const BarChart = (props) => {
   );
 };
 
-BarChart.propTypes = { ...vvCorePropTypes, ...vvBarsPropTypes };
-BarChart.defaultProps = { ...vvCoreDefaultProps, ...vvBarsDefaultProps };
+BarChart.propTypes = { ...vvCorePropTypes, ...barChartPropTypes, ...vvBarsPropTypes };
+BarChart.defaultProps = { ...vvCoreDefaultProps, ...barChartDefaultProps, ...vvBarsDefaultProps };
 
 export default BarChart;
