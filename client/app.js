@@ -7,6 +7,7 @@ import Layout, { GridContainer, GridRow, GridChild } from '@financial-times/g-co
 import React, { PureComponent } from 'react';
 import { ContextPropType, ContextDefaultProps } from './util/prop-types';
 import BarChart from './components/bar-chart';
+import LineChart from './components/line-chart';
 
 // Select required chart sizes
 const chartSizes = [
@@ -66,7 +67,7 @@ class App extends PureComponent {
                     {name}
                   </h2>
 
-                  <BarChart data={chartProps.dataFile && data} width={width} height={height} {...chartProps} />
+                  <LineChart data={chartProps.dataFile && data} width={width} height={height} {...chartProps} />
                 </div>
               </GridRow>
             );

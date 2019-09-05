@@ -1,4 +1,6 @@
-import { letterFrequency } from '@vx/mock-data';
+import { letterFrequency, genDateValue } from '@vx/mock-data';
+
+const genLines = num => new Array(num).fill(1).map(() => genDateValue(25));
 
 export const vvCoreDefaultProps = {
   width: 700,
@@ -19,7 +21,18 @@ export const vvBarsDefaultProps = {
   yVariable: 'letter',
 };
 
+export const vvLinesDefaultProps = {
+  data: genLines(3), // Generates 3 x date-value series
+  xVariable: 'date',
+  yVariable: 'value',
+};
+
 export const barChartDefaultProps = {
+  xAxisOrientation: 'bottom',
+  yAxisOrientation: 'left',
+};
+
+export const lineChartDefaultProps = {
   xAxisOrientation: 'bottom',
   yAxisOrientation: 'left',
 };
