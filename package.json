@@ -96,6 +96,7 @@
     "@vx/mock-data": "^0.0.189",
     "@vx/scale": "^0.0.190",
     "@vx/shape": "^0.0.190",
+    "d3-array": "^2.3.1",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
