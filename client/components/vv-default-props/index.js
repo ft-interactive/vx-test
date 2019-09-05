@@ -1,6 +1,6 @@
 import { letterFrequency } from '@vx/mock-data';
 
-export const vvCoreDefaults = {
+export const vvCoreDefaultProps = {
   width: 700,
   height: 500,
   margin: {
@@ -11,9 +11,9 @@ export const vvCoreDefaults = {
   },
 };
 
-export const vvAxisDefaults = {};
+export const vvAxisDefaultProps = {};
 
-export const vvBarsDefaults = {
+export const vvBarsDefaultProps = {
   data: letterFrequency,
   xVariable: 'frequency',
   yVariable: 'letter',

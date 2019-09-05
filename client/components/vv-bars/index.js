@@ -7,7 +7,7 @@ import React from 'react';
 import { Group } from '@vx/group';
 import { Bar } from '@vx/shape';
 import { vvBarsPropTypes } from '../vv-prop-types';
-import { vvBarsDefaults } from '../vv-default-props';
+import { vvBarsDefaultProps } from '../vv-default-props';
 
 const VvBars = (props) => {
   const {
@@ -29,6 +29,6 @@ const VvBars = (props) => {
 };
 
 VvBars.propTypes = { ...vvBarsPropTypes };
-VvBars.defaultProps = { ...vvBarsDefaults };
+VvBars.defaultProps = { ...vvBarsDefaultProps };
 
 export default VvBars;

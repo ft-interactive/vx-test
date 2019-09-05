@@ -9,7 +9,7 @@ import { Group } from '@vx/group';
 import VvBars from '../vv-bars';
 import VvAxis from '../vv-axis';
 import { vvCorePropTypes, vvBarsPropTypes } from '../vv-prop-types';
-import { vvCoreDefaults, vvBarsDefaults } from '../vv-default-props';
+import { vvCoreDefaultProps, vvBarsDefaultProps } from '../vv-default-props';
 
 const BarChart = (props) => {
   const {
@@ -43,6 +43,6 @@ const BarChart = (props) => {
 };
 
 BarChart.propTypes = { ...vvCorePropTypes, ...vvBarsPropTypes };
-BarChart.defaultProps = { ...vvCoreDefaults, ...vvBarsDefaults };
+BarChart.defaultProps = { ...vvCoreDefaultProps, ...vvBarsDefaultProps };
 
 export default BarChart;

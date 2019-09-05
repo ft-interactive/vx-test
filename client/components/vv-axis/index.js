@@ -8,7 +8,7 @@ import {
   Axis, AxisTop, AxisRight, AxisBottom, AxisLeft,
 } from '@vx/axis';
 import { vvAxisPropTypes } from '../vv-prop-types';
-import { vvAxisDefaults } from '../vv-default-props';
+import { vvAxisDefaultProps } from '../vv-default-props';
 
 const VvAxis = (props) => {
   const { orientation } = props;
@@ -28,6 +28,6 @@ const VvAxis = (props) => {
 };
 
 VvAxis.propTypes = vvAxisPropTypes;
-VvAxis.defaultProps = vvAxisDefaults;
+VvAxis.defaultProps = vvAxisDefaultProps;
 
 export default VvAxis;
