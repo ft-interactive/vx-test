@@ -18,3 +18,8 @@ export const vvBarsDefaults = {
   xVariable: 'frequency',
   yVariable: 'letter',
 };
+
+export const barChartDefaultProps = {
+  xAxisOrientation: 'bottom',
+  yAxisOrientation: 'left',
+};

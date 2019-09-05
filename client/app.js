@@ -19,10 +19,10 @@ const chartSizes = [
 // Configure your chart
 const chartProps = {
   // dataFile: '../data/example.csv',
-  // xVariable: ''
-  // yVariable: ''
-  xAxisOrientation: 'bottom',
-  yAxisOrientation: 'left',
+  // xVariable: 'FRPS jobs',
+  // yVariable: 'name',
+  // xAxisOrientation: 'bottom',
+  // yAxisOrientation: 'right',
 };
 
 // Ignore everything from this point on
@@ -57,16 +57,16 @@ class App extends PureComponent {
 
         <GridContainer>
           {chartSizes.map((size) => {
-            const { name, ...dimensions } = size;
+            const { name, width, height } = size;
 
             return (
-              <GridRow>
+              <GridRow key={`chart-${width}x${height}`}>
                 <div data-o-grid-colspan="12">
                   <h2>
                     {name}
                   </h2>
 
-                  <BarChart {...dimensions} {...chartProps} />
+                  <BarChart data={chartProps.dataFile && data} width={width} height={height} {...chartProps} />
                 </div>
               </GridRow>
             );

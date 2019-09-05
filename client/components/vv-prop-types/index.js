@@ -44,3 +44,8 @@ export const vvBarsPropTypes = {
   xScale: PropTypes.func,
   yScale: PropTypes.func,
 };
+
+export const barChartPropTypes = {
+  xAxisOrientation: PropTypes.string.isRequired,
+  yAxisOrientation: PropTypes.string.isRequired,
+};
