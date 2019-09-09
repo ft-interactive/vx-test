@@ -53,12 +53,25 @@ export const vvLinesPropTypes = {
   yScale: PropTypes.func,
 };
 
+export const vvScatterPropTypes = {
+  data: PropTypes.arrayOf(PropTypes.any).isRequired,
+  xVariable: PropTypes.string.isRequired,
+  yVariable: PropTypes.string.isRequired,
+  xScale: PropTypes.func,
+  yScale: PropTypes.func,
+};
+
 export const barChartPropTypes = {
   xAxisOrientation: PropTypes.string.isRequired,
   yAxisOrientation: PropTypes.string.isRequired,
 };
 
 export const lineChartPropTypes = {
+  xAxisOrientation: PropTypes.string.isRequired,
+  yAxisOrientation: PropTypes.string.isRequired,
+};
+
+export const scatterChartPropTypes = {
   xAxisOrientation: PropTypes.string.isRequired,
   yAxisOrientation: PropTypes.string.isRequired,
 };

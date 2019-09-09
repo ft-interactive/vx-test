@@ -8,6 +8,7 @@ import React, { PureComponent } from 'react';
 import { ContextPropType, ContextDefaultProps } from './util/prop-types';
 import BarChart from './components/bar-chart';
 import LineChart from './components/line-chart';
+import ScatterChart from './components/scatter-chart';
 
 // Select required chart sizes
 const chartSizes = [
@@ -33,7 +34,7 @@ class App extends PureComponent {
   };
 
   async componentDidMount() {
-    const { default: data } = await import('../data/example.csv');
+    const { default: data } = await import('../data/bubble-data.csv');
     this.setState({ data });
   }
 
@@ -67,7 +68,15 @@ class App extends PureComponent {
                     {name}
                   </h2>
 
-                  <LineChart data={chartProps.dataFile && data} width={width} height={height} {...chartProps} />
+                  <ScatterChart
+                    data={data}
+                    xVariable="var a"
+                    yVariable="var b"
+                    sizeVariable="var c"
+                    width={width}
+                    height={height}
+                    {...chartProps}
+                  />
                 </div>
               </GridRow>
             );
