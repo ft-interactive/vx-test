@@ -6,14 +6,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { scaleLinear, scalePower } from '@vx/scale';
-import { max } from 'd3-array';
+import { extent, max } from 'd3-array';
 import { Group } from '@vx/group';
+import VvLines from '../vv-lines';
 import VvDots from '../vv-dots';
 import VvAxis from '../vv-axis';
 import { vvCorePropTypes } from '../vv-prop-types';
 import { vvCoreDefaultProps } from '../vv-default-props';
 
-const ScatterChart = (props) => {
+const ConnectedScatterChart = (props) => {
   const {
     data, width, height, margin, xAxisOrientation, yAxisOrientation, xVariable, yVariable, sizeVariable,
   } = props;
@@ -47,6 +48,8 @@ const ScatterChart = (props) => {
           sizeVariable={sizeVariable}
         />
 
+        <VvLines data={[data]} xVariable={xVariable} yVariable={yVariable} xScale={xScale} yScale={yScale} />
+
         {/* y-axis */}
         <VvAxis orientation={yAxisOrientation} left={yAxisOrientation === 'left' ? 0 : innerWidth} scale={yScale} />
 
@@ -57,7 +60,7 @@ const ScatterChart = (props) => {
   );
 };
 
-ScatterChart.propTypes = {
+ConnectedScatterChart.propTypes = {
   ...vvCorePropTypes,
   data: PropTypes.arrayOf(PropTypes.any),
   xVariable: PropTypes.string,
@@ -68,7 +71,7 @@ ScatterChart.propTypes = {
   yScale: PropTypes.func,
 };
 
-ScatterChart.defaultProps = {
+ConnectedScatterChart.defaultProps = {
   ...vvCoreDefaultProps,
   data: [],
   xVariable: 'date',
@@ -79,4 +82,4 @@ ScatterChart.defaultProps = {
   yAxisOrientation: 'left',
 };
 
-export default ScatterChart;
+export default ConnectedScatterChart;

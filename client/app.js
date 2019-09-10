@@ -8,7 +8,7 @@ import React, { PureComponent } from 'react';
 import { ContextPropType, ContextDefaultProps } from './util/prop-types';
 import BarChart from './components/bar-chart';
 import LineChart from './components/line-chart';
-import ScatterChart from './components/scatter-chart';
+import ConnectedScatterChart from './components/connected-scatter-chart';
 
 // Select required chart sizes
 const chartSizes = [
@@ -68,7 +68,7 @@ class App extends PureComponent {
                     {name}
                   </h2>
 
-                  <ScatterChart
+                  <ConnectedScatterChart
                     data={data}
                     xVariable="var a"
                     yVariable="var b"

@@ -1,22 +1,22 @@
-name,group,var a,var b,var c,label,type
-Greece,Europe,76.3025,3.8681,44,,
-Spain,Europe,62.979,1.4025,20,,
-Japan,Europe,62.1315,5.6187,10,,
-Portugal,Europe,58.0333,-0.9904,12,,
-UK,Europe,44.7512,0.7501,2,yes,curve
-Ireland,Europe,44.4265,-10.6498,14,yes,curve
-US,America,42.8531,0.9338,8,,
-Italy,Europe,32.2907,3.368,9,,
-France,Europe,32.2896,4.5507,10,,
-Australia,Other,30.1977,1.8165,12,,
-Finland,Europe,28.7452,7.5535,15,,
-Canada,America,24.4121,3.9336,4,yes,curve
-Belgium,Europe,17.6021,5.9164,44,yes,curve
-Netherlands,Europe,15.2878,1.5633,20,,
-New Zealand,Other,14.1265,-2.3366,10,,
-Austria,Europe,13.5031,2.0245,12,yes,elbow
-Korea,Other,10.5306,2.0776,2,,
-Denmark,Europe,9.4321,3.4095,14,,
-Taiwan,Other,3.5809,-0.5473,8,,
-Germany,Europe,1.0905,3.0252,9,,
-Sweden,Europe,0.5327,2.7359,10,,
+date,name,group,var a,var b,var c,label,type
+2019-01-01,Greece,Europe,76.3025,3.8681,44,,
+2019-04-01,Spain,Europe,62.979,1.4025,20,,
+2019-07-01,Japan,Europe,62.1315,5.6187,10,,
+2019-10-01,Portugal,Europe,58.0333,-0.9904,12,,
+2020-01-01,UK,Europe,44.7512,0.7501,2,yes,curve
+2020-04-01,Ireland,Europe,44.4265,-10.6498,14,yes,curve
+2020-07-01,US,America,42.8531,0.9338,8,,
+2020-10-01,Italy,Europe,32.2907,3.368,9,,
+2021-01-01,France,Europe,32.2896,4.5507,10,,
+2021-04-01,Australia,Other,30.1977,1.8165,12,,
+2021-07-01,Finland,Europe,28.7452,7.5535,15,,
+2021-10-01,Canada,America,24.4121,3.9336,4,yes,curve
+2022-01-01,Belgium,Europe,17.6021,5.9164,44,yes,curve
+2022-04-01,Netherlands,Europe,15.2878,1.5633,20,,
+2022-07-01,New Zealand,Other,14.1265,-2.3366,10,,
+2022-10-01,Austria,Europe,13.5031,2.0245,12,yes,elbow
+2023-01-01,Korea,Other,10.5306,2.0776,2,,
+2023-04-01,Denmark,Europe,9.4321,3.4095,14,,
+2023-07-01,Taiwan,Other,3.5809,-0.5473,8,,
+2023-10-01,Germany,Europe,1.0905,3.0252,9,,
+2024-01-01,Sweden,Europe,0.5327,2.7359,10,,
