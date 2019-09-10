@@ -14,8 +14,6 @@ const VvLines = (props) => {
     data, xVariable, yVariable, xScale, yScale,
   } = props;
 
-  console.log(data);
-
   return (
     <Group className="vv-lines">
       {data.map((d, i) => {
