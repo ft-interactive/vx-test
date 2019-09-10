@@ -11,3 +11,7 @@ global.document.location = {
 };
 
 global.document.getElementsByTagName = () => [];
+
+global.navigator = {
+  userAgent: '',
+};

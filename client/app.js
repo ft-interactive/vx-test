@@ -9,6 +9,7 @@ import { ContextPropType, ContextDefaultProps } from './util/prop-types';
 import BarChart from './components/bar-chart';
 import LineChart from './components/line-chart';
 import ScatterChart from './components/scatter-chart';
+import VvTooltip from './components/vv-tooltip';
 
 // Select required chart sizes
 const chartSizes = [
@@ -68,15 +69,18 @@ class App extends PureComponent {
                     {name}
                   </h2>
 
-                  <ScatterChart
-                    data={data}
-                    xVariable="var a"
-                    yVariable="var b"
-                    sizeVariable="var c"
-                    width={width}
-                    height={height}
-                    {...chartProps}
-                  />
+                  <VvTooltip>
+                    <ScatterChart
+                      data={data}
+                      xVariable="var a"
+                      yVariable="var b"
+                      sizeVariable="var c"
+                      width={width}
+                      height={height}
+                      tooltipTarget="VvDots"
+                      {...chartProps}
+                    />
+                  </VvTooltip>
                 </div>
               </GridRow>
             );
