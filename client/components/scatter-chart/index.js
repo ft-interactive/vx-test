@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { scaleLinear, scalePower } from '@vx/scale';
-import { max } from 'd3-array';
+import { extent } from 'd3-array';
 import { Group } from '@vx/group';
 import VvDots from '../vv-dots';
 import VvAxis from '../vv-axis';
